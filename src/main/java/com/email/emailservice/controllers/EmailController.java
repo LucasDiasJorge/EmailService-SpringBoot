@@ -27,8 +27,7 @@ public class EmailController {
     }
 
     @GetMapping("/get-email")
-    public List<EmailModel> getEmails(@RequestParam int id){
-        System.out.println("Request Param is " + id);
+    public List<EmailModel> getEmails(){
         return emailService.getEmails();
     }
 
