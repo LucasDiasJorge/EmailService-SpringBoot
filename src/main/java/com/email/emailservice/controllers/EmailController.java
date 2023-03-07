@@ -10,7 +10,9 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 @RestController
 public class EmailController {
@@ -29,6 +31,16 @@ public class EmailController {
     @GetMapping("/get-email")
     public List<EmailModel> getEmails(){
         return emailService.getEmails();
+    }
+
+    @GetMapping("/ping-email")
+    public Map<String,String> ping(){
+
+        Map<String,String> ret = new HashMap<>();
+
+        ret.put("Version", "1.0");
+
+        return ret;
     }
 
 }
